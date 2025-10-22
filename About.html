@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4ff;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #1a3fa0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+      transition: width 0.3s;
+    }
+    .sidebar h2 {
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+    .sidebar-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+    }
+    .sidebar-link.active,
+    .sidebar-link:hover {
+      background-color: #12286a;
+    }
+    .logout-btn {
+      background-color: #f33a3a;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: white;
+    }
+    .logout-btn i {
+      margin-right: 5px;
+    }
+
+    /* Topbar */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 220px;
+      right: 0;
+      height: 60px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+      transition: left 0.3s;
+    }
+    .search-container {
+      position: relative;
+      width: 250px;
+    }
+    .search-bar {
+      border-radius: 50px;
+      padding-left: 35px;
+      width: 100%;
+      height: 38px;
+      border: 1px solid #ddd;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+      font-size: 1.1rem;
+    }
+    .avatar {
+      border-radius: 50%;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 220px;
+      margin-top: 80px;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+
+    /* Contact Form Panels */
+    .contact-left {
+      background-color: #1a3fa0;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .contact-left i {
+      font-size: 2rem;
+      padding: 15px;
+      margin: 5px;
+      background-color: white;
+      color: #1a3fa0;
+      border-radius: 50%;
+    }
+    .contact-right {
+      background-color: white;
+      padding: 40px 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 60px;
+        padding: 10px;
+      }
+      .sidebar h2 span,
+      .sidebar ul li span {
+        display: none;
+      }
+      .topbar {
+        left: 60px;
+      }
+      .main-content {
+        margin-left: 60px;
+      }
+      .search-container {
+        width: 150px;
+      }
+    }
+  </style> -->
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div>
+      <h2>
+        <img src="img/mtn.jpg" alt="Logo" style="width:40px;height:40px;border-radius:50%;" />
+        <span>LibraryBook</span>
+      </h2>
+      <ul>
+        <li><a href="dashboard.html" class="sidebar-link"><i class="bi bi-house-door-fill"></i> <span>Dashboard</span></a></li>
+        <li><a href="Members.html" class="sidebar-link"><i class="bi bi-people-fill"></i> <span>Members</span></a></li>
+        <li><a href="Borrow.html" class="sidebar-link"><i class="bi bi-bar-chart-fill"></i> <span>Borrow & Return</span></a></li>
+        <li><a href="Report.html" class="sidebar-link"><i class="bi bi-exclamation-triangle-fill"></i> <span>Reports</span></a></li>
+        <li><a href="About.html active" class="sidebar-link"><i class="bi bi-info-circle-fill"></i> <span>About Us</span></a></li>
+      </ul>
+    </div>
+    <button class="logout-btn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="search-container">
+      <i class="bi bi-search search-icon"></i>
+      <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <img src="https://i.pinimg.com/736x/53/47/84/5347845877dd9f9998a0dbb9353f75e0.jpg" width="40" height="40" class="avatar" />
+      <span>Ada Lovelace</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h2 class="text-center mb-4 fw-bold text-primary">📩 About Us</h2>
+    <div class="row shadow-lg rounded-4 overflow-hidden">
+      
+      <!-- Left Panel -->
+      <div class="col-lg-6 contact-left text-center">
+        <h2 class="fw-bold mb-3">Let's Connect</h2>
+        <p class="mb-4">We're here to help and answer any questions you might have. We look forward to hearing from you!</p>
+        <div class="d-flex justify-content-center gap-3 mb-3">
+          <i class="bi bi-envelope-fill"></i>
+          <i class="bi bi-person-fill"></i>
+          <i class="bi bi-chat-dots-fill"></i>
+        </div>
+        <p class="fw-semibold">Digital Communication Hub</p>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="col-lg-6 contact-right">
+        <form id="contactForm">
+          <!-- Name -->
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-person-fill"></i></span>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+          </div>
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-envelope-fill"></i></span>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required />
+            </div>
+          </div>
+          <!-- Message -->
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <div class="input-group">
+              <span class="input-group-text bg-light align-items-start pt-2"><i class="bi bi-chat-dots-fill"></i></span>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+          </div>
+          <div id="submissionMessage" class="alert alert-success d-none"></div>
+          <button type="submit" class="btn btn-primary w-100 d-flex align-items-center justify-content-center">
+            <i class="bi bi-send-fill me-2"></i> SUBMIT
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Auto-highlight active sidebar link
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const currentPage = window.location.pathname.split("/").pop();
+    sidebarLinks.forEach(link => {
+      const linkPage = link.getAttribute('href');
+      if(linkPage === currentPage){
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Contact form submission
+    const form = document.getElementById('contactForm');
+    const messageDiv = document.getElementById('submissionMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      if (!name || !email || !message) {
+        messageDiv.textContent = "Please fill out all fields.";
+        messageDiv.classList.remove('d-none', 'alert-success');
+        messageDiv.classList.add('alert-danger');
+        return;
+      }
+      messageDiv.classList.add('d-none');
+      const submitBtn = form.querySelector('button');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Submitting...';
+      setTimeout(() => {
+        console.log('Form Submitted:', { name, email, message });
+        messageDiv.textContent = "Thank you for your message! We will get back to you soon.";
+        messageDiv.classList.remove('d-none', 'alert-danger');
+        messageDiv.classList.add('alert-success');
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="bi bi-send-fill me-2"></i> SUBMIT';
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

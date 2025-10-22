@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Reports Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide/dist/lucide.min.js"></script>
+
+  <!-- <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4ff;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color: #1a3fa0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: white;
+      transition: width 0.3s;
+    }
+    .sidebar h2 {
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidebar ul li {
+      margin: 12px 0;
+    }
+    .sidebar-link {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: all 0.2s ease;
+    }
+    .sidebar-link.active,
+    .sidebar-link:hover {
+      background-color: #12286a;
+    }
+    .logout-btn {
+      background-color: #f33a3a;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      color: white;
+    }
+    .logout-btn i {
+      margin-right: 5px;
+    }
+
+    /* Topbar */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 220px;
+      right: 0;
+      height: 60px;
+      background-color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 100;
+      transition: left 0.3s;
+    }
+    .search-container {
+      position: relative;
+      width: 250px;
+    }
+    .search-bar {
+      border-radius: 50px;
+      padding-left: 35px;
+      width: 100%;
+      border: 1px solid #ddd;
+      height: 38px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: gray;
+      font-size: 1.1rem;
+    }
+    .avatar {
+      border-radius: 50%;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 220px;
+      margin-top: 80px;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+    .card h5 {
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 60px;
+        padding: 10px;
+      }
+      .sidebar h2 span,
+      .sidebar ul li span {
+        display: none;
+      }
+      .topbar {
+        left: 60px;
+      }
+      .main-content {
+        margin-left: 60px;
+      }
+      .search-container {
+        width: 150px;
+      }
+    }
+  </style> -->
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div>
+      <h2>
+        <img src="img/mtn.jpg" alt="Logo" style="width:40px;height:40px;border-radius:50%;" />
+        <span>LibraryBook</span>
+      </h2>
+      <ul>
+        <li><a href="dashboard.html" class="sidebar-link"><i class="bi bi-house-door-fill"></i> <span>Dashboard</span></a></li>
+        <li><a href="Members.html" class="sidebar-link"><i class="bi bi-people-fill"></i> <span>Members</span></a></li>
+        <li><a href="Borrow.html" class="sidebar-link"><i class="bi bi-bar-chart-fill"></i> <span>Borrow & Return</span></a></li>
+        <li><a href="Report.html" class="sidebar-link active"><i class="bi bi-exclamation-triangle-fill"></i> <span>Reports</span></a></li>
+        <li><a href="About.html" class="sidebar-link"><i class="bi bi-info-circle-fill"></i> <span>About Us</span></a></li>
+      </ul>
+    </div>
+    <button class="logout-btn"><i class="bi bi-box-arrow-right"></i> Logout</button>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="search-container">
+      <i class="bi bi-search search-icon"></i>
+      <input type="text" class="search-bar" placeholder="Search...">
+    </div>
+    <div class="profile d-flex align-items-center gap-2">
+      <img src="https://i.pinimg.com/736x/53/47/84/5347845877dd9f9998a0dbb9353f75e0.jpg" alt="Profile" class="avatar" width="40" height="40">
+      <span>Ada Lovelace</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Dashboard Title -->
+    <h2 class="text-center mb-4 fw-bold text-primary">📈 Monthly Reports Dashboard</h2>
+
+    <!-- Report Form -->
+    <div class="card shadow-sm mb-4 mx-auto" style="max-width: 90%;">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Add Monthly Report</h5>
+        <form id="reportForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Total Borrowed This Month</label>
+              <input type="number" name="totalBorrowed" class="form-control" placeholder="e.g. 230">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Most Borrowed Book</label>
+              <input type="text" name="mostBorrowedBook" class="form-control" placeholder="e.g. Atomic Habits" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-semibold">Most Active Member</label>
+              <input type="text" name="mostActiveMember" class="form-control" placeholder="e.g. John" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold">Late Returns</label>
+              <input type="number" name="lateReturns" class="form-control" placeholder="e.g. 12">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label fw-semibold">New Members</label>
+              <input type="number" name="newMembers" class="form-control" placeholder="e.g. 8">
+            </div>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary w-100">Submit Report</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard Table -->
+    <div class="card shadow-sm mx-auto" style="max-width: 90%;">
+      <div class="card-body">
+        <h5 class="card-title mb-3">Recent Reports</h5>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle" id="recordsTable">
+            <thead class="table-primary">
+              <tr>
+                <th>ID</th>
+                <th>Most Borrowed</th>
+                <th>Most Active</th>
+                <th>Total Borrowed</th>
+                <th>Late Returns</th>
+                <th>New Members</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="7" class="text-center text-muted">No reports yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const reportForm = document.getElementById('reportForm');
+    const recordsTable = document.getElementById('recordsTable').querySelector('tbody');
+    let records = [];
+
+    function renderRecords() {
+      recordsTable.innerHTML = '';
+      if(records.length === 0) {
+        recordsTable.innerHTML = '<tr><td colspan="7" class="text-center text-muted">No reports yet.</td></tr>';
+        return;
+      }
+      records.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>#${r.id}</td>
+          <td>${r.bookTitle}</td>
+          <td>${r.memberName}</td>
+          <td>${r.totalBorrowed || '—'}</td>
+          <td>${r.lateReturns || '—'}</td>
+          <td>${r.newMembers || '—'}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" onclick="editRecord(${r.id})">✏️ Edit</button>
+            <button class="btn btn-sm btn-danger" onclick="deleteRecord(${r.id})">🗑 Delete</button>
+          </td>
+        `;
+        recordsTable.appendChild(tr);
+      });
+      lucide.replace();
+    }
+
+    function editRecord(id) {
+      const record = records.find(r => r.id === id);
+      alert('Edit report for: ' + record.memberName);
+    }
+
+    function deleteRecord(id) {
+      if(confirm('Are you sure you want to delete this report?')) {
+        records = records.filter(r => r.id !== id);
+        renderRecords();
+      }
+    }
+
+    reportForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      const formData = new FormData(reportForm);
+      const newRecord = {
+        id: Date.now(),
+        memberName: formData.get('mostActiveMember'),
+        bookTitle: formData.get('mostBorrowedBook'),
+        totalBorrowed: formData.get('totalBorrowed'),
+        lateReturns: formData.get('lateReturns'),
+        newMembers: formData.get('newMembers')
+      };
+      records.unshift(newRecord);
+      renderRecords();
+      reportForm.reset();
+      alert('✅ Report added!');
+    });
+
+    renderRecords();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
